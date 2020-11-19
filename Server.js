@@ -1,9 +1,12 @@
 const express = require("express");
 const request = require("request");
+const path = require("path");
+
 var cors = require("cors");
 const app = express();
-const port = 3999;
+
 app.use(cors());
+app.use(express.static(path.join(__dirname, "build")));
 
 app.get("/wz/:username/:platform", (req, res) => {
   const endpoint = `https://call-of-duty-modern-warfare.p.rapidapi.com/warzone-matches/${req.params.username}/${req.params.platform}`;
@@ -26,5 +29,10 @@ app.get("/wz/:username/:platform", (req, res) => {
   });
 });
 
-app.listen(port)
-console.log(`Example app listening at http://localhost:${port}`);
++app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
+app.listen(3333);
+
+console.log(`Running`);

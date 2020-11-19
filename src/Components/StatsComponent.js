@@ -28,7 +28,7 @@ export default () => {
     </span>
   );
   useEffect(() => {
-    fetch(`http://localhost:3999/wz/${username}/${platform}`, {
+    fetch(`/wz/${username}/${platform}`, {
       method: "GET",
     })
       .then((response) => {
