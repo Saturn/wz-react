@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 
 const QueryComponent = () => {
-  const [userName, setUserName] = useState("p4ddym1607");
+  const [userName, setUserName] = useState("");
   const [platform, setPlatform] = useState(Platform.PSN);
   let history = useHistory();
   console.log(platform);
