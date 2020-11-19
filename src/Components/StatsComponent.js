@@ -30,10 +30,6 @@ export default () => {
   useEffect(() => {
     fetch(`http://localhost:3999/wz/${username}/${platform}`, {
       method: "GET",
-      headers: {
-        "x-rapidapi-key": "eCG9Qkgi2wmsh8XzfMLfKZWVQ4TDp1gOPiwjsn284ac6LiOYnq",
-        "x-rapidapi-host": "call-of-duty-modern-warfare.p.rapidapi.com",
-      },
     })
       .then((response) => {
         response.json().then((v) => {
